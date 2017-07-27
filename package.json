@@ -1,0 +1,17 @@
+{
+  "name": "analytics_adapter",
+  "version": "1.0.0",
+  "description": "A simple adapter to send analitycs events to Mixpanel, Amplitude, etc",
+  "main": "index.js",
+  "repository": "https://github.com/marco-souza/analitycs_adapter.git",
+  "author": "Marco Antônio",
+  "script": {
+    "run": 
+  },
+  "license": "MIT",
+  "dependencies": {
+    "babel-cli": "^6.24.1",
+    "mocha": "^3.4.2",
+    "nodemon": "^1.11.0"
+  }
+}
