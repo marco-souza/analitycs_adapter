@@ -1,17 +1,35 @@
 {
   "name": "analytics_adapter",
   "version": "1.0.0",
-  "description": "A simple adapter to send analitycs events to Mixpanel, Amplitude, etc",
-  "main": "index.js",
+  "main": "src/app/index.js",
   "repository": "https://github.com/marco-souza/analitycs_adapter.git",
-  "author": "Marco Antônio",
-  "script": {
-    "run": 
-  },
+  "author": "Marco Antonio <ma.souza.junior@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "test": "node_modules/.bin/jest",
+    "build": "node_modules/.bin/webpack"
+  },
   "dependencies": {
-    "babel-cli": "^6.24.1",
-    "mocha": "^3.4.2",
-    "nodemon": "^1.11.0"
+    "typescript": "^2.4.2",
+    "webpack": "^3.4.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^20.0.5",
+    "jest": "^20.0.4",
+    "ts-jest": "^20.0.7",
+    "ts-loader": "^2.3.2"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(src/tests/.*|\\.(test|spec))\\.(tsx?|jsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json",
+      "jsx"
+    ]
   }
 }
