@@ -10,12 +10,15 @@
     "build": "node_modules/.bin/webpack"
   },
   "dependencies": {
+    "mixpanel-browser": "https://github.com/mixpanel/mixpanel-js.git",
     "typescript": "^2.4.2",
     "webpack": "^3.4.1"
   },
   "devDependencies": {
     "@types/jest": "^20.0.5",
     "jest": "^20.0.4",
+    "jsdoc-webpack-plugin": "^0.0.2",
+    "lodash": "^4.17.4",
     "ts-jest": "^20.0.7",
     "ts-loader": "^2.3.2"
   },
@@ -24,6 +27,7 @@
       "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "testRegex": "(src/tests/.*|\\.(test|spec))\\.(tsx?|jsx?)$",
+    "moduleDirectories": ["node_modules"],
     "moduleFileExtensions": [
       "ts",
       "tsx",

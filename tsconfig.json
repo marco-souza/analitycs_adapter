@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "lib": ["es6", "es7"]
+    },
+    "exclude": [
+        "node_modules",
+        "src/tests"
+    ]
+}
