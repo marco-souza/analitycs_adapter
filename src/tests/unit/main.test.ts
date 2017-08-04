@@ -96,3 +96,8 @@ test("Init mixpanel currectly", () => {
     console.log(typeof mixpanel)
     // expect(analytics.engine).toEqual(new Mixpanel(tk))
 })
+
+
+adasd
+
+
