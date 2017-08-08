@@ -1,6 +1,6 @@
 {
   "name": "analytics_adapter",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "lib/analytics_adapter.js",
   "repository": "https://github.com/marco-souza/analitycs_adapter.git",
   "author": "Marco Antonio <ma.souza.junior@gmail.com>",
@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "typescript": "^2.4.2",
+    "mixpanel-browser": "^2.13.0",
     "webpack": "^3.4.1"
   },
   "devDependencies": {
@@ -19,9 +20,7 @@
     "enzyme": "^2.9.1",
     "jsdoc-webpack-plugin": "^0.0.2",
     "lodash": "^4.17.4",
-    "mixpanel-browser": "^2.13.0",
     "mocha": "^3.5.0",
-    "ts-jest": "^20.0.7",
     "ts-loader": "^2.3.2",
     "ts-node": "^3.3.0"
   }
