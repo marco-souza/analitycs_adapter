@@ -2,15 +2,16 @@ const
     path            = require("path"),
     JsDocPlugin     = require("jsdoc-webpack-plugin")
 
-module.exports = {
+module.exports = {// First off all, create a app element
+
     entry: {
-        main: path.resolve(__dirname + "/src/app/index.ts")
-        // vendor: []
+        main: path.resolve(__dirname, "src/app/index.ts")
     },
     output: {
-        path: path.resolve(__dirname + "/lib"),
-        filename: "analytics_adapter.js"
+        path: path.resolve(__dirname, "lib"),
+        filename: "app.js"
     },
+
     module: {
         rules: [
             // Typescript
@@ -24,10 +25,10 @@ module.exports = {
             },
         ]
     },
-    plugins: [
-        // JSdoc
-        new JsDocPlugin({ conf: '.jsdoc.conf.json' }),
-    ],
+    // plugins: [
+    //     // JSdoc
+    //     new JsDocPlugin({ conf: '.jsdoc.conf.json' }),
+    // ],
     resolve: {
         extensions: [".ts", ".tsx", ".js", ]
     }

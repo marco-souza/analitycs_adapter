@@ -1,38 +1,52 @@
-import mixpanel from 'mixpanel-browser'
-// console.log(mixpanel)
+import mixpanel from "mixpanel-browser"
+import _ from "lodash"
 
+
+/**
+ * Mixpanel Engine Wrapper
+ */
 class Mixpanel {
 
-    eng =  mixpanel
+    _eng =  mixpanel
     distinct_id: string
 
+    /**
+     * @constructor
+     * @param  {string} token
+     */
     constructor(token:string) {
         // Create a Mixpanel Object
-        this.eng.init(token)
+        this._eng.init(token)
         // console.log(mixpanel)
     }
 
-
+    /**
+     * @param  {string} userId
+     */
     identify(userId: string) {
-        // Find on a list of identifiers
-        this.eng.identify(userId)
+        this._eng.identify(userId)
     }
 
 
     getMixpanel() {
-        return this.eng
+        return this._eng
     }
 
-
+    /**
+     * @param  {number|string} userId
+     */
     alias(userId: number|string) {
         // Save alias to a uniqIdentifier
-        this.eng.alias(userId)
+        this._eng.alias(userId)
     }
 
-
+    /**
+     * @param  {string} ev
+     * @param  {} props={}
+     */
     track(ev:string, props = {}) {
         // Track an event
-        this.eng.track(ev, props)
+        this._eng.track(ev, props)
     }
 }
 

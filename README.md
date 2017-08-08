@@ -15,4 +15,3 @@ import { AnalyticsAdapter } form "node_modules/analitycs_adapter/lib"
 
 - `Typescript` as transpiler for js;
 - `Webpack` to bundler all code together
-- `jsdoc` to create Documentation

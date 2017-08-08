@@ -1,39 +1,28 @@
 {
   "name": "analytics_adapter",
   "version": "1.0.0",
-  "main": "src/app/index.js",
+  "main": "lib/analytics_adapter.js",
   "repository": "https://github.com/marco-souza/analitycs_adapter.git",
   "author": "Marco Antonio <ma.souza.junior@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "node_modules/.bin/jest",
-    "build": "node_modules/.bin/webpack"
+    "test": "node_modules/.bin/mocha -r ts-node/register --recursive src/**/*test.ts",
+    "build": "node_modules/.bin/webpack",
+    "doc": "node_modules/.bin/jsdoc --config=jsdoc.conf.json"
   },
   "dependencies": {
-    "mixpanel-browser": "https://github.com/mixpanel/mixpanel-js.git",
     "typescript": "^2.4.2",
     "webpack": "^3.4.1"
   },
   "devDependencies": {
-    "@types/jest": "^20.0.5",
-    "jest": "^20.0.4",
+    "chai": "^4.1.1",
+    "enzyme": "^2.9.1",
     "jsdoc-webpack-plugin": "^0.0.2",
     "lodash": "^4.17.4",
+    "mixpanel-browser": "^2.13.0",
+    "mocha": "^3.5.0",
     "ts-jest": "^20.0.7",
-    "ts-loader": "^2.3.2"
-  },
-  "jest": {
-    "transform": {
-      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
-    },
-    "testRegex": "(src/tests/.*|\\.(test|spec))\\.(tsx?|jsx?)$",
-    "moduleDirectories": ["node_modules"],
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "json",
-      "jsx"
-    ]
+    "ts-loader": "^2.3.2",
+    "ts-node": "^3.3.0"
   }
 }
