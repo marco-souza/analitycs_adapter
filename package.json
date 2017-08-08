@@ -1,7 +1,7 @@
 {
   "name": "analytics_adapter",
-  "version": "0.0.4",
-  "main": "lib/analytics_adapter.js",
+  "version": "0.0.5",
+  "main": "lib/main.js",
   "repository": "https://github.com/marco-souza/analitycs_adapter.git",
   "author": "Marco Antonio <ma.souza.junior@gmail.com>",
   "license": "MIT",

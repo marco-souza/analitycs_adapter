@@ -46,4 +46,4 @@ class Mock {
     }
 }
 
-export default Mock
+export { Mock }

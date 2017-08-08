@@ -1,4 +1,5 @@
-import Mixpanel from '../../app/engines/mixpanel'
+import {Mixpanel} from '../../app/engines/mixpanel'
+import {Mock} from '../../app/engines/mock'
 import mixpanel from 'mixpanel-browser'
 import {describe, it } from 'mocha'
 import { expect } from 'chai'
@@ -6,7 +7,9 @@ import AnalyticsAdapter,{ analytics_engine } from "../../app/"
 
 
 const setup = (engine:analytics_engine = "", token:string = "") => {
-    return new AnalyticsAdapter(engine, token)
+    let instance = new AnalyticsAdapter(engine, token)
+    instance.engine = new Mock()
+    return instance
 }
 
 describe("Test AnalyticsAdapter", ()=>{

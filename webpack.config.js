@@ -8,7 +8,8 @@ module.exports = {// First off all, create a app element
     },
     output: {
         path: path.resolve(__dirname, "lib"),
-        filename: "analytics_adapter.js"
+        chunkFilename: "[chunkhash].js",
+        filename: "[name].js"
     },
 
     module: {

@@ -1,5 +1,5 @@
-import Mock from "./engines/mock"
-import Mixpanel from "./engines/mixpanel"
+import { Mock }         from "./engines/mock"
+import { Mixpanel }     from "./engines/mixpanel"
 
 type analytics_engine = "mixpanel" | ""
 
@@ -19,8 +19,7 @@ class AnalyticsAdapter {
                 if (tk == "") throw("You need a token!")
                 this.engine = new Mixpanel(tk)
                 break
-            case "":
-                this.engine = new Mock()
+            case "": // For test                
                 break
             default:
                 throw("Error on load analytic engine!")
@@ -57,4 +56,4 @@ class AnalyticsAdapter {
 }
 
 export default AnalyticsAdapter
-export {analytics_engine}
+export { analytics_engine, AnalyticsAdapter }

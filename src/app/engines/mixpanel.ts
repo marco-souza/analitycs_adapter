@@ -50,4 +50,4 @@ class Mixpanel {
     }
 }
 
-export default Mixpanel
+export { Mixpanel }
