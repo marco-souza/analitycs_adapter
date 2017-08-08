@@ -1,6 +1,5 @@
 const
-    path            = require("path"),
-    JsDocPlugin     = require("jsdoc-webpack-plugin")
+    path            = require("path")
 
 module.exports = {// First off all, create a app element
 
@@ -9,7 +8,7 @@ module.exports = {// First off all, create a app element
     },
     output: {
         path: path.resolve(__dirname, "lib"),
-        filename: "app.js"
+        filename: "analytics_adapter.js"
     },
 
     module: {
@@ -18,10 +17,9 @@ module.exports = {// First off all, create a app element
             {
                 test: /\.tsx?$/,
                 loader: "ts-loader",
-                exclude: [
-                    path.resolve(__dirname, "/node_modules"), // libs
-                    path.resolve(__dirname, "/src/tests") // libs
-                ]
+                // exclude: [
+                //     path.resolve(__dirname, "/node_modules"), // libs
+                // ]
             },
         ]
     },
