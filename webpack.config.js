@@ -1,15 +1,33 @@
 const
-    path            = require("path")
+    path                        = require("path"),
+    CleanWebpackPlugin          = require("clean-webpack-plugin"),
+    dist                        = path.resolve(__dirname, "lib")
+    
+// definition typescript bundler Plugin
+function DtsBundlePlugin() { }
+DtsBundlePlugin.prototype.apply = function (compiler) {
+    compiler.plugin('done', function () {
+        var dts = require('dts-bundle');
 
-module.exports = {// First off all, create a app element
+        dts.bundle({
+            name: 'analytics_adapter',
+            main: dist + '/src/**/*.d.ts',
+            out: dist + '/index.d.ts',
+            removeSource: true,
+            outputAsModuleFolder: true
+        });
+    });
+};
+
+module.exports = {  // First off all, create a app element
 
     entry: {
         main: path.resolve(__dirname, "src/app/index.ts")
     },
     output: {
-        path: path.resolve(__dirname, "lib"),
+        path: dist,
         chunkFilename: "[chunkhash].js",
-        filename: "[name].js"
+        filename: "index.js"
     },
 
     module: {
@@ -18,16 +36,17 @@ module.exports = {// First off all, create a app element
             {
                 test: /\.tsx?$/,
                 loader: "ts-loader",
-                // exclude: [
-                //     path.resolve(__dirname, "/node_modules"), // libs
-                // ]
             },
         ]
     },
-    // plugins: [
-    //     // JSdoc
-    //     new JsDocPlugin({ conf: '.jsdoc.conf.json' }),
-    // ],
+    plugins: [
+        // JSdoc
+        // new JsDocPlugin({ conf: ".jsdoc.conf.json" }),
+
+        // .d.ts Generator
+        new CleanWebpackPlugin(dist),
+        new DtsBundlePlugin(),
+    ],
     resolve: {
         extensions: [".ts", ".tsx", ".js", ]
     }
