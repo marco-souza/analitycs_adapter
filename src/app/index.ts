@@ -56,9 +56,5 @@ class AnalyticsAdapter {
 
 }
 
-export {
-    AnalyticsAdapter,
-    analytics_engine
-}
-
 export default AnalyticsAdapter
+export {analytics_engine}

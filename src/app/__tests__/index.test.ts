@@ -2,7 +2,7 @@ import Mixpanel from '../../app/engines/mixpanel'
 import mixpanel from 'mixpanel-browser'
 import {describe, it } from 'mocha'
 import { expect } from 'chai'
-import { AnalyticsAdapter, analytics_engine } from "../../app/"
+import AnalyticsAdapter,{ analytics_engine } from "../../app/"
 
 
 const setup = (engine:analytics_engine = "", token:string = "") => {
